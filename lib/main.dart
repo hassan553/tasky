@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ttt/core/routes/app_pages.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,6 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       home: const Scaffold(),
+      initialRoute: AppPages.onboarding,
+      routes: routes,
     );
   }
 }
