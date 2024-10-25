@@ -30,7 +30,7 @@ class CustomButton extends StatelessWidget {
     return GestureDetector(
       onTap: isDisabled ? null : onTap,
       child: Container(
-        height: 46,
+        height: 60,
         padding: const EdgeInsets.symmetric(horizontal: 8),
         decoration: BoxDecoration(
           // color: backgroundColor!,
@@ -43,7 +43,22 @@ class CustomButton extends StatelessWidget {
         child: Center(
           child: FittedBox(
             child: icon != null
-                ? Icon(icon, color: color)
+                ? Row(
+                    children: [
+                      Text(
+                        text,
+                        style: Theme.of(context)
+                            .textTheme
+                            .headlineMedium!
+                            .copyWith(
+                              color: color!,
+                              fontSize: fontSize!,
+                            ),
+                      ),
+                      const SizedBox(width: 10),
+                      Icon(icon, color: color),
+                    ],
+                  )
                 : Text(
                     text,
                     style: Theme.of(context).textTheme.headlineMedium!.copyWith(
