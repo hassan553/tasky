@@ -19,23 +19,21 @@ class OnboardingScreen extends StatelessWidget {
         child: Column(
           children: [
             Expanded(
-                flex: 4,
                 child: CustomImageHandler(
-                  AppImages.onboarding,
-                  fit: BoxFit.fill,
-                  width: width(context),
-                )),
-            Expanded(
-                child: Text('Task Management &\nTo-Do List',
-                    textAlign: TextAlign.center,
-                    style: context.f12400!.copyWith(
-                        fontSize: 24.sp, fontWeight: FontWeight.w700))),
-            Expanded(
-                child: Text(
-                    'This productive tool is designed to help\nyou better manage your task\n project-wise conveniently!',
-                    textAlign: TextAlign.center,
-                    style: context.f14400!.copyWith(color: AppColors.bgGrey))),
-            const Spacer(),
+              AppImages.onboarding,
+              fit: BoxFit.fill,
+              width: width(context),
+            )),
+            Text('Task Management &\nTo-Do List',
+                textAlign: TextAlign.center,
+                style: context.f12400!
+                    .copyWith(fontSize: 24.sp, fontWeight: FontWeight.w700)),
+            SizedBox(height: 16.h),
+            Text(
+                'This productive tool is designed to help\nyou better manage your task\n project-wise conveniently!',
+                textAlign: TextAlign.center,
+                style: context.f14400!.copyWith(color: AppColors.bgGrey)),
+            SizedBox(height: 32.h),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: CustomButton(
@@ -45,7 +43,7 @@ class OnboardingScreen extends StatelessWidget {
                   onTap: () =>
                       context.navigateToAndReplacement(AppPages.login)),
             ),
-            const SizedBox(height: 20)
+            SizedBox(height: 20.h)
           ],
         ),
       ),
