@@ -44,6 +44,7 @@ class CustomButton extends StatelessWidget {
           child: FittedBox(
             child: icon != null
                 ? Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
                         text,
