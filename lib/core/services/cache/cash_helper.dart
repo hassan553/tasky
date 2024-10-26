@@ -1,6 +1,14 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CashHelper {
+  CashHelper._();
+
+  static CashHelper? cashHelper;
+  static CashHelper instance() {
+    cashHelper ??= CashHelper._();
+    return cashHelper!;
+  }
+
   static SharedPreferences? sharedPreferences;
   static init() async {
     sharedPreferences = await SharedPreferences.getInstance();
